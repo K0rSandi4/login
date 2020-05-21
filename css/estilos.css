@@ -1,0 +1,89 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: content-box;
+}
+
+.principal {
+    background: #1b262c;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor{
+    background: #393e46;
+    padding: 50px 25px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px cyan;
+    width: 330px;
+    height: 420px;
+}
+
+.enlace{
+    color:#f7f7f7;
+    display: inline-block;
+    text-align: right;
+    width: 100%;
+}
+
+    .enlace:hover{
+        text-decoration: none;
+        color:#63686e;
+    }
+
+.encabezado{
+    color: #f7f7f7;
+}
+
+.userpwd{
+    display: flex;
+    flex-direction: column;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+    /*Otorgamos z-index: 0; al field que contiene el label para que lo tome como el contenedor de inicio
+    y se situe detras de este, si no lo pusiesemos, el label se situaria detrás del documento HTML
+    y no lo veríamos.*/
+    z-index: 0;
+    align-items: center;
+}
+
+label{
+    /*z-index: -1; para situar el label detras del <input class="field">*/
+    z-index: -1;
+    /*Con position: absolute; le decimos que tome la referencia del cuerpo HTML, no de su padre field.*/
+    position: absolute;
+    /*Con transition: transform 400ms; le damos un efecto mas fluido, retrasando un poco la transicion*/
+    transition: transform 400ms;
+    color:#f7f7f7;
+    
+}
+
+.field:focus-within label{
+    /*Accediendo a .field:focus-within label le decimos al navegador que cuando se haga click en el campo input
+    cambie ciertos atributos del elemento label.*/
+    transform: scale(0.9) translateY(-30px);
+}
+
+.user, .pwd{
+    width:200px;
+    width: 100%;
+    text-align: center;
+    border:0;
+    border-bottom: 1px solid #f7f7f7;
+    background: none;
+    outline: none;
+}
+
+.user:focus{
+    /*transform: scale(0.8) translateY(-2rem);*/
+}
+
+.btn{
+    width: 100%;
+    height: 40px;
+}
